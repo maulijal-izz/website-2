@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendeteksi Stabilitas Keuangan</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">FinDetect<span>.</span></div>
+    <p>Cek & Analisis Kesehatan Keuanganmu Secara Otomatis</p>
+  </header>
+
+  <main class="container">
+    <!-- Form Input Data Keuangan -->
+    <section class="card form-card">
+      <h2><span class="icon">📊</span> Data Keuangan Bulanan</h2>
+      <p class="subtitle">Masukkan nominal rupiah tanpa titik atau koma.</p>
+
+      <form id="financeForm" onsubmit="event.preventDefault(); calculateHealth();">
+        <div class="input-group">
+          <label for="income">Pendapatan Bersih Bulanan (Rp)</label>
+          <input type="number" id="income" placeholder="Contoh: 10000000" required />
+        </div>
+
+        <div class="input-group">
+          <label for="expenses">Pengeluaran Pokok & Rutin (Rp)</label>
+          <input type="number" id="expenses" placeholder="Contoh: 4500000" required />
+        </div>
+
+        <div class="input-group">
+          <label for="savings">Tabungan / Investasi Bulanan (Rp)</label>
+          <input type="number" id="savings" placeholder="Contoh: 2000000" required />
+        </div>
+
+        <div class="input-group">
+          <label for="debts">Total Cicilan / Utang Bulanan (Rp)</label>
+          <input type="number" id="debts" placeholder="Contoh: 1500000" required />
+        </div>
+
+        <div class="input-group">
+          <label for="emergencyFund">Total Dana Darurat Saat Ini (Rp)</label>
+          <input type="number" id="emergencyFund" placeholder="Contoh: 25000000" required />
+        </div>
+
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">Analisis Keuangan Saya</button>
+          <button type="button" class="btn btn-secondary" onclick="loadSampleData()">Isi Data Contoh</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Results Section -->
+    <section class="card result-card" id="resultCard" style="display: none;">
+      <h2><span class="icon">🎯</span> Hasil Analisis Stabilitas</h2>
+
+      <div class="score-box">
+        <div class="score-circle">
+          <span id="scoreValue">0</span>
+          <span class="score-max">/ 100</span>
+        </div>
+        <div class="score-details">
+          <h3 id="statusTitle">Menghitung...</h3>
+          <p id="statusDesc">Detail stabilitas keuangan kamu.</p>
+        </div>
+      </div>
+
+      <!-- Ratio Indicators -->
+      <div class="ratios-grid">
+        <div class="ratio-item">
+          <h4>Rasio Utang (DSR)</h4>
+          <span class="ratio-value" id="dsrValue">0%</span>
+          <small id="dsrStatus">Maksimal 30%</small>
+        </div>
+
+        <div class="ratio-item">
+          <h4>Rasio Menabung</h4>
+          <span class="ratio-value" id="savingsRatioValue">0%</span>
+          <small id="savingsRatioStatus">Minimal 10% - 20%</small>
+        </div>
+
+        <div class="ratio-item">
+          <h4>Ketahanan Dana Darurat</h4>
+          <span class="ratio-value" id="efMonthsValue">0 Bulan</span>
+          <small id="efStatus">Ideal 3 - 6 Bulan</small>
+        </div>
+      </div>
+
+      <!-- Visual Chart -->
+      <div class="chart-container">
+        <h3>Proporsi Alokasi Keuangan Bulanan</h3>
+        <canvas id="budgetChart"></canvas>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="recommendations">
+        <h3>💡 Saran & Langkah Perbaikan</h3>
+        <ul id="adviceList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 FinDetect — Pendeteksi Stabilitas Keuangan Personal</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

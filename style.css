@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+header .logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+header .logo span {
+  color: #34d399;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  flex: 1;
+}
+
+.card {
+  background-color: #1e293b;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #334155;
+}
+
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #f1f5f9;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+.btn-primary:hover {
+  background-color: #0284c7;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #334155;
+  color: #f1f5f9;
+}
+
+.btn-secondary:hover {
+  background-color: #475569;
+}
+
+/* Score Section */
+.score-box {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background-color: #0f172a;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.score-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #34d399);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+#scoreValue {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.score-max {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.score-details h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.score-details p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* Ratios Grid */
+.ratios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.ratio-item {
+  background-color: #0f172a;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #38bdf8;
+}
+
+.ratio-item h4 {
+  font-size: 13px;
+  color: #94a3b8;
+
+}
+
+.ratio-value {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 5px 0;
+  color: #34d399;
+}
+
+.ratio-item small {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Chart */
+.chart-container {
+  margin: 30px 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.chart-container h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #cbd5e1;
+}
+
+/* Recommendations */
+.recommendations {
+  background-color: #0f172a;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.recommendations h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #f1f5f9;
+}
+
+.recommendations ul {
+  list-style: none;
+}
+
+.recommendations li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.recommendations li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #34d399;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+  }
+  .score-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
